@@ -34,6 +34,8 @@ group :development, :test do
   gem 'autoprefixer-rails'
   gem 'font-awesome-sass', '~> 5.12.0'
   gem 'simple_form'
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 
 group :development do
