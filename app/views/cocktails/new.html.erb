@@ -1,5 +1,6 @@
 <div class="container">
-<h3>Create new cocktail:</h3>
+  <div class="card p-5 my-5">
+<h1>Create new cocktail:</h1>
 <%= simple_form_for(@cocktail) do |c| %>
     <div class="form-inputs">
       <%= c.input :name, label: false %>
@@ -8,5 +9,6 @@
     <div class="form-actions">
       <%= c.button :submit, class: 'btn btn-primary' %>
     </div>
+  </div>
   </div>
 <% end %>

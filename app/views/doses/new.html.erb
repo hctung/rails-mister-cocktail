@@ -1,12 +1,13 @@
 <div class="container">
+    <div class="card p-5 my-5">
   <h1>Add dose to <%= @cocktail.name %></h1>
 
 
 <%= simple_form_for [@cocktail, @dose] do |d| %>
   <div class="container">
     <div class="form-inputs">
-      <%= d.input :description %>
       <%= d.association :ingredient %>
+      <%= d.input :description %>
     </div>
     <div class="form-actions">
       <%= d.button :submit, class: 'btn btn-primary' %>
@@ -14,6 +15,6 @@
       <p class="mt-2"><%= link_to 'Back', cocktails_path %></p>
   </div>
 <% end %>
-
+</div>
 
 </div>

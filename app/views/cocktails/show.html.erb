@@ -1,13 +1,33 @@
 <div class="container">
+  <div class="card px-5 pb-5 my-5">
+          <%= link_to 'Back', cocktails_path, class: "my-3" %>
+  <% if flash[:notice] %>
+<div class="flash flash-success alert alert-dismissible fade show" role="alert">
+  <span><strong>Yay!</strong> 🍸 you successfully created a <%= @cocktail.name %></span>
+  <a data-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div>
+  <% elsif flash[:alert] %>
+<div class="flash flash-danger alert alert-dismissible fade show" role="alert">
+  <span><strong>Yay!</strong>Successfully destroyed a <%= @cocktail.name %> dose</span>
+  <a data-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div>
+  <% end %>
+
   <h1>Cocktail details</h1>
   <p>Name: <%= @cocktail.name %></p>
     <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-
+<div class="mt-5">
   <h3>Cocktail doses:</h3>
-  <%= link_to 'Add dose', new_cocktail_dose_path(@cocktail) %>
+  <%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
   <% @cocktail.doses.each do |d| %>
-    <p>Description: <%= d.description %></p>
-    <p>Ingredient: <%= d.ingredient.name %></p>
+    <p class="mt-5">Ingredient: <%= d.ingredient.name %> | Description: <%= d.description %></p>
     <%= link_to 'Delete', dose_path(d), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
   <% end %>
 </div>
+</div>
+
