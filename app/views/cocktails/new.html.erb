@@ -1,10 +1,9 @@
-<h1>Create new cocktail:</h1>
-
-
+<div class="container">
+<h3>Create new cocktail:</h3>
 <%= simple_form_for(@cocktail) do |c| %>
-  <div class="container">
     <div class="form-inputs">
-      <%= c.input :name %>
+      <%= c.input :name, label: false %>
+        <%= c.input :photo, as: :file, label: false %>
     </div>
     <div class="form-actions">
       <%= c.button :submit, class: 'btn btn-primary' %>
