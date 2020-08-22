@@ -24,10 +24,12 @@
   <h3>Cocktail doses:</h3>
   <%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
   <% @cocktail.doses.each do |d| %>
+  <div>
     <p class="mt-5">Ingredient: <%= d.ingredient.name %> | Description: <%= d.description %></p>
     <%= link_to 'Delete', dose_path(d), method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
+      </div>
 </div>
 </div>
 
